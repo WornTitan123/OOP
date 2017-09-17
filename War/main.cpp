@@ -8,8 +8,6 @@
 
 int main(){
 	Card c;
-	
-	std::uniform_int_distribution<>deckNum(1, 52);
 
 	std::vector<Card> deck;
 	deck.reserve(52);

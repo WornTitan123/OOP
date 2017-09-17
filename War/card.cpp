@@ -7,6 +7,7 @@ std::vector<Card> Card::shuffleCards(std::vector<Card> deck){
 	std::random_shuffle(deck.begin(),deck.end());
 	return deck;
 }
+//shows current deck of cards
 void Card::viewDeck(std::vector<Card> deck){
 	for (Card c : deck){
 		std::cout << c << '\n';
@@ -31,43 +32,43 @@ operator<<(std::ostream& os, Rank r)
 {
 	switch (r) {
 	case Ace:
-		os << 'A';
+		os << "Ace of ";
 		break;
 	case Two:
-		os << "2";
+		os << "2 of ";
 		break;
 	case Three:
-		os << "3";
+		os << "3 of ";
 		break;
 	case Four:
-		os << "4";
+		os << "4 of ";
 		break;
 	case Five:
-		os << "5";
+		os << "5 of ";
 		break;
 	case Six:
-		os << "6";
+		os << "6 of ";
 		break;
 	case Seven:
-		os << "7";
+		os << "7 of ";
 		break;
 	case Eight:
-		os << "8";
+		os << "8 of ";
 		break;
 	case Nine:
-		os << "9";
+		os << "9 of ";
 		break;
 	case Ten:
-		os << 'T';
+		os << "10 of ";
 		break;
 	case Jack:
-		os << 'J';
+		os << "Jack of ";
 		break;
 	case Queen:
-		os << 'Q';
+		os << "Queen of ";
 		break;
 	case King:
-		os << 'K';
+		os << "King of ";
 		break;
 	}
 	return os;
@@ -78,16 +79,16 @@ operator<<(std::ostream& os, Suit s)
 {
 	switch (s) {
 	case Hearts:
-		os << 'H';
+		os << "Hearts";
 		break;
 	case Diamonds:
-		os << 'D';
+		os << "Diamonds";
 		break;
 	case Clubs:
-		os << 'C';
+		os << "Clubs";
 		break;
 	case Spades:
-		os << 'S';
+		os << "Spades";
 		break;
 	}
 	return os;
