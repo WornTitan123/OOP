@@ -1,3 +1,11 @@
+#pragma once
+
+#include <iosfwd>
+#include <utility>
+#include <vector>
+#include<algorithm>
+#include<random>
+
 enum Rank{
 	Ace,
 	Two,
@@ -34,7 +42,7 @@ public:
 
 	//accessor
 	//observer
-	Rank get_rank() const { return rank; }
+	Rank get_rank() const { return this->rank; }
 	Suit get_suit() const { return suit; }
 
 	//mutator
@@ -42,4 +50,15 @@ public:
 	void set_rank(Rank r){ rank = r; }
 	void set_suit(Suit s){ suit = s; }
 
+	//member functions
+	std::vector <Card> shuffleCards(std::vector<Card>);
+	void viewDeck(std::vector<Card>);
+
 };
+//equality comparsion
+bool operator ==(Card a, Card b);
+bool operator !=(Card a, Card b);
+
+std::ostream& operator<<(std::ostream& os, Card c);
+std::ostream& operator<<(std::ostream& os, Rank r);
+std::ostream& operator<<(std::ostream& os, Suit r);
