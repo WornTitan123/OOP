@@ -1,10 +1,6 @@
 #pragma once
 
-#include <iosfwd>
-#include <utility>
 #include <vector>
-#include<algorithm>
-#include<random>
 
 enum Rank{
 	Ace,
@@ -51,8 +47,7 @@ public:
 	void set_suit(Suit s){ suit = s; }
 
 	//member functions
-	std::vector <Card> shuffleCards(std::vector<Card>);
-	void viewDeck(std::vector<Card>);
+	
 
 };
 //equality comparsion

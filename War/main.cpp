@@ -1,24 +1,39 @@
 #include "card.hpp"
+#include "deck.hpp"
+#include "player.hpp"
+#include "game.hpp"
 
+#include <queue>
 #include <iostream>
-#include<cstdlib>
-#include<algorithm>
-#include <vector>
-#include<ctime>
+
 
 int main(){
-	Card c;
+	Game g;
 
-	std::vector<Card> deck;
-	deck.reserve(52);
-	for (int r = Ace; r <= King; ++r){
-		for (int s = Hearts; s <= Spades; ++s){
-			Card c(static_cast<Rank>(r), static_cast<Suit>(s));
-			deck.push_back(c);
-		}
+	int turnsToWin = 0;
+	int simulationNumber = 0;
+
+	do{
+		std::cout << "HOW many games of War do you want to simulation?" << std::endl;
+		std::cin >> simulationNumber;
+	} while (simulationNumber <= 0);
+
+	//test functions for deck class
+	/*Deck d;
+	Player p1, p2;
+	std::queue<Card> hand;
+	d.createDeck();
+	d.shuffleCards(d.getDeck());
+	d.splitDeck(d.getDeck(), p1, p2);
+	hand = p1.getPlayersDeck();
+	std::cout << hand.size() << "\n";*/
+
+	for (int i = 0; i < simulationNumber; ++i){
+		turnsToWin += g.playGame();
 	}
-	deck = c.shuffleCards(deck);
-	c.viewDeck(deck);
+	std::cout << "The average for your " << simulationNumber << "is " << turnsToWin / simulationNumber << std::endl;
+
+	g.playGame();
 	system("pause");
 	return 0;
 }
