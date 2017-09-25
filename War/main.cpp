@@ -10,8 +10,8 @@
 int main(){
 	Game g;
 
-	int turnsToWin = 0;
-	int simulationNumber = 0;
+	double turnsToWin = 0;
+	double simulationNumber = 0;
 
 	do{
 		std::cout << "HOW many games of War do you want to simulation?" << std::endl;
@@ -31,7 +31,7 @@ int main(){
 	for (int i = 0; i < simulationNumber; ++i){
 		turnsToWin += g.playGame();
 	}
-	std::cout << "The average for your " << simulationNumber << "is " << turnsToWin / simulationNumber << std::endl;
+	std::cout << "The average for your " << simulationNumber << " game(s) is " << turnsToWin / simulationNumber <<" moves"<< std::endl;
 
 	g.playGame();
 	system("pause");
